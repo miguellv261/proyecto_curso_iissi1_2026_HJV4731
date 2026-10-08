@@ -1,15 +1,18 @@
-# Título Proyecto
+#IISSI FIT
 
 ## Miembros del grupo L7-DF-GRUPO_3
 
-1. López Velasco, Miguel Ángel
-1. Jerez Gavira, Alejandro
-1. Alaya Sotillo, José
+ López Velasco, Miguel Ángel
+ Jerez Gavira, Alejandro
+ Alaya Sotillo, José
 
 
 ## 1. Introducción al problema
+**IISSIFIT** es un gimnasio de ámbito local que comenzó como un pequeño negocio familiar dedicado a ofrecer servicios de entrenamiento y actividades deportivas a los vecinos de la zona. En sus primeros años contaba con alrededor de **100 clientes**, por lo que la gestión de la información se realizaba manualmente mediante hojas de cálculo, documentos impresos y anotaciones en papel.
 
-- Descripción del problema para poner en contexto el proyecto, incluyendo información sobre los clientes y usuarios, la situación actual, problemas, expectativas, etc. Se valorará la presencia de información multimedia (fotos, gráficos, documentos escaneados, etc.).
+Actualmente, IISSIFIT ofrece diferentes servicios, como **acceso a las instalaciones, clases dirigidas, entrenamientos personalizados y planes de membresía**. Los principales usuarios del sistema son los **socios o clientes**, los **entrenadores**, el **personal de recepción y administración** y los **administradores o propietarios** del gimnasio.
+
+El crecimiento del negocio ha hecho que la gestión manual resulte cada vez menos eficiente. Entre los principales problemas se encuentran los **errores en el registro de socios y pagos**, la **duplicidad de información**, la **dificultad para consultar la disponibilidad de clases**, la **actualización de cuotas** y la **pérdida de tiempo en tareas administrativas**. Además, la falta de información centralizada dificulta la realización de estadísticas y la toma de decisiones.
 
 ## 2. Glosario de términos
 

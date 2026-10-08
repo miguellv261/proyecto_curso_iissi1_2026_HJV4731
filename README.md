@@ -8,11 +8,19 @@
 
 
 ## 1. Introducción al problema
-**IISSIFIT** es un gimnasio de ámbito local que comenzó como un pequeño negocio familiar dedicado a ofrecer servicios de entrenamiento y actividades deportivas a los vecinos de la zona. En sus primeros años contaba con alrededor de **100 clientes**, por lo que la gestión de la información se realizaba manualmente mediante hojas de cálculo, documentos impresos y anotaciones en papel.
 
-Actualmente, IISSIFIT ofrece diferentes servicios, como **acceso a las instalaciones, clases dirigidas, entrenamientos personalizados y planes de membresía**. Los principales usuarios del sistema son los **socios o clientes**, los **entrenadores**, el **personal de recepción y administración** y los **administradores o propietarios** del gimnasio.
+IISSIFIT es un gimnasio de ámbito local que comenzó como un pequeño negocio familiar dedicado a ofrecer servicios de entrenamiento y actividades deportivas a los vecinos de la zona. En sus primeros años contaba con alrededor de 100 clientes, por lo que la gestión de la información se realizaba manualmente mediante hojas de cálculo, documentos impresos y anotaciones en papel.
 
-El crecimiento del negocio ha hecho que la gestión manual resulte cada vez menos eficiente. Entre los principales problemas se encuentran los **errores en el registro de socios y pagos**, la **duplicidad de información**, la **dificultad para consultar la disponibilidad de clases**, la **actualización de cuotas** y la **pérdida de tiempo en tareas administrativas**. Además, la falta de información centralizada dificulta la realización de estadísticas y la toma de decisiones.
+Actualmente, IISSIFIT ofrece diferentes servicios, como acceso a las instalaciones, clases dirigidas, entrenamientos personalizados y planes de membresía. Los principales usuarios del sistema son los socios o clientes, los entrenadores, el personal de recepción y administración y los administradores o propietarios del gimnasio.
+
+El crecimiento del negocio ha hecho que la gestión manual resulte cada vez menos eficiente. Entre los principales problemas se encuentran los errores en el registro de socios y pagos, la duplicidad de información, la dificultad para consultar la disponibilidad de clases, la actualización de cuotas y la pérdida de tiempo en tareas administrativas. Además, la falta de información centralizada dificulta la realización de estadísticas y la toma de decisiones.
+
+Los propietarios esperan continuar con la expansión del gimnasio, aumentando el número de socios hasta aproximadamente 2.000, incorporando nuevas salas, contratando más entrenadores y ampliando la oferta de actividades. Este crecimiento supondría un aumento considerable de la cantidad de información y operaciones que deben gestionarse.
+
+Para solucionar estos problemas, se plantea el diseño y desarrollo de una base de datos para la gestión de IISSIFIT. Esta base de datos permitirá centralizar y organizar la información relacionada con socios, entrenadores, clases, salas, reservas, asistencias, membresías y pagos, facilitando su consulta y actualización.
+
+Con esta base de datos se espera reducir errores, agilizar las tareas administrativas, mejorar la organización y disponer de información actualizada y fiable, proporcionando una estructura adecuada para el crecimiento futuro del gimnasio.
+
 
 ## 2. Glosario de términos
 

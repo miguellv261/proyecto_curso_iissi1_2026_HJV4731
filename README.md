@@ -17,6 +17,9 @@ El crecimiento del negocio ha hecho que la gestión manual resulte cada vez meno
 
 Los propietarios esperan continuar con la expansión del gimnasio, aumentando el número de socios hasta aproximadamente 2.000, incorporando nuevas salas, contratando más entrenadores y ampliando la oferta de actividades. Este crecimiento supondría un aumento considerable de la cantidad de información y operaciones que deben gestionarse.
 
+
+
+
 Para solucionar estos problemas, se plantea el diseño y desarrollo de una base de datos para la gestión de IISSIFIT. Esta base de datos permitirá centralizar y organizar la información relacionada con socios, entrenadores, clases, salas, reservas, asistencias, membresías y pagos, facilitando su consulta y actualización.
 
 Con esta base de datos se espera reducir errores, agilizar las tareas administrativas, mejorar la organización y disponer de información actualizada y fiable, proporcionando una estructura adecuada para el crecimiento futuro del gimnasio.

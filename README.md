@@ -1,11 +1,11 @@
 # Título Proyecto
 
-## Miembros del grupo LX-XXX-X (sustituir)
+## Miembros del grupo L7-DF-GRUPO_3
 
-1. Apellidos, Nombre
-1. Apellidos, Nombre
-1. Apellidos, Nombre
-1. Apellidos, Nombre
+1. López Velasco, Miguel Ángel
+1. Jerez Gavira, Alejandro
+1. Alaya Sotillo, José
+
 
 ## 1. Introducción al problema
 

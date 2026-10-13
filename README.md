@@ -2,9 +2,9 @@
 
 ## Miembros del grupo L7-DF-GRUPO_3
 
- López Velasco, Miguel Ángel
- Jerez Gavira, Alejandro
- Alaya Sotillo, José
+ - López Velasco, Miguel Ángel
+ - Jerez Gavira, Alejandro
+ - Alaya Sotillo, José
 
 
 ## 1. Introducción al problema

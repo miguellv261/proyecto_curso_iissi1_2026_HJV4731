@@ -32,7 +32,28 @@ Con esta base de datos se espera reducir errores, agilizar las tareas administra
 
 ## 2. Glosario de términos
 
-- Términos específicos del dominio del problema, ordenados alfabéticamente. Se valorará la presencia de información multimedia.
+- **Aforo:** número máximo de personas que pueden estar en una sala o clase al mismo tiempo. Indica cuántas reservas se pueden hacer.
+
+- **Asistencia:** registro de que un socio realmente acudió a una clase, a un entrenamiento o a las instalaciones en una fecha y hora específicas. Se diferencia de la reserva, que es solo la intención de asistir.
+
+- **Clase:** sesión de actividad física grupal que imparte un entrenador en una sala y en un horario determinado. Tiene un aforo limitado y los socios se apuntan mediante reserva.
+
+- **Cuota:** dinero que paga el socio periódicamente (mensual, trimestral o anual) por su membresía. El precio varía según la tarifa que tenga contratada.
+
+- **Entrenador:** persona del gimnasio que imparte clases y también diseña y supervisa las rutinas y entrenamientos personalizados de los socios.
+
+- **Membresía:** acuerdo o plan que permite al socio usar los servicios del gimnasio durante un tiempo. Puede ser básica, completa, familiar, de estudiante, entre otras.
+
+- **Pago:** acción mediante la cual un socio abona una cuota o un servicio. Se registra con la fecha, el importe, el método de pago y el estado (pagado, pendiente o devuelto).
+
+- **Reserva:** petición de un socio para tener un lugar en una clase o sesión específica. Puede estar confirmada, en lista de espera, cancelada o terminada.
+
+- **Rutina:** conjunto de ejercicios planificados, con su orden, series y repeticiones, que un entrenador asigna a un socio para alcanzar un objetivo concreto.
+
+- **Sala:** espacio físico del gimnasio donde se realizan actividades como spinning, yoga o musculación. Tiene un límite de personas y horarios definidos.
+
+- **Socio:** persona registrada en el gimnasio que tiene una membresía activa. Puede usar las instalaciones, reservar clases y solicitar entrenamientos personalizados.
+
 
 ## 3. Visión general del sistema
 

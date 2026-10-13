@@ -59,7 +59,64 @@ Con esta base de datos se espera reducir errores, agilizar las tareas administra
 
 ### 3.1. Requisitos generales
 
+- **RG-01:** El sistema deberá gestionar la información de los socios.
+- **RG-02:** El sistema deberá gestionar las fichas físicas de los socios.
+- **RG-03:** El sistema deberá gestionar los diferentes tipos de membresía.
+- **RG-04:** El sistema deberá gestionar la información de los entrenadores.
+- **RG-05:** El sistema deberá gestionar las salas del gimnasio.
+- **RG-06:** El sistema deberá gestionar la programación de clases.
+- **RG-07:** El sistema deberá gestionar las reservas de los socios.
+- **RG-08:** El sistema deberá gestionar los pagos.
+- **RG-09:** El sistema deberá controlar las plazas disponibles en cada clase.
+- **RG-10:** El sistema deberá evitar conflictos entre horarios, entrenadores y salas.
+- **RG-11:** El sistema deberá permitir obtener listados y realizar consultas.
+- **RG-12:** El sistema deberá centralizar toda la información en una base de datos compatible con MariaDB.
+
+
 ### 3.2. Usuarios del sistema
+
+#### Administrador
+
+Es el usuario con mayor nivel de acceso. Sus funciones principales serán:
+
+- Consultar la información de socios y entrenadores.
+- Gestionar las membresías ofrecidas.
+- Supervisar las clases y salas.
+- Consultar reservas y pagos.
+- Obtener información sobre ingresos y ocupación.
+- Supervisar el funcionamiento general de IISSIFIT.
+
+#### Recepcionista
+
+Es el personal encargado de atender a los socios. Sus funciones principales serán:
+
+- Registrar y consultar socios.
+- Consultar las fichas físicas.
+- Consultar las membresías disponibles.
+- Consultar clases y plazas disponibles.
+- Gestionar las reservas.
+- Registrar los pagos de los socios.
+
+#### Entrenador
+
+Es el profesional encargado de impartir las clases. Sus funciones principales serán:
+
+- Consultar sus datos personales y profesionales.
+- Consultar las clases que tiene asignadas.
+- Consultar las salas en las que se imparten sus clases.
+- Consultar los socios inscritos en sus clases.
+
+#### Socio
+
+Es el cliente registrado en el gimnasio. Sus funciones principales serán:
+
+- Consultar sus datos personales.
+- Consultar su ficha física.
+- Consultar su membresía.
+- Consultar las clases disponibles.
+- Consultar sus reservas.
+- Consultar los pagos realizados.
+
 
 ## 4. Catálogo de requisitos
 

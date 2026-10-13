@@ -122,17 +122,342 @@ Es el cliente registrado en el gimnasio. Sus funciones principales serán:
 
 ### 4.1. Requisitos funcionales
 
-#### R.F.01. Título requisito funcional
+#### R.F.01. Listado de socios
 
-Como [tipo de usuario]
-quiero [servicio]
-para [razón]
+Como recepcionista
+quiero consultar el listado completo de socios
+para localizar rápidamente a cualquier socio registrado.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- Se debe aplicar la regla de negocio R.N.XX.
-- ...
+* Se muestran todos los socios registrados en el sistema.
+* Para cada socio se muestran su identificador, nombre, apellidos y estado.
+* Si no hay socios registrados, se muestra un listado vacío.
+
+#### R.F.02. Consulta de un socio concreto
+
+Como socio
+quiero consultar mis datos personales
+para comprobar que son correctos.
+
+**Prueba de aceptación**
+* Se muestran todos los datos del socio indicado (RI-01).
+* Un socio solo puede consultar sus propios datos.
+* Si el socio no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.03. Consulta de socios activos e inactivos
+
+Como administrador
+quiero consultar los socios activos e inactivos
+para conocer la situación del gimnasio.
+
+**Prueba de aceptación**
+* Se puede filtrar el listado por estado activo o inactivo.
+* El número de socios mostrados coincide con el estado seleccionado.
+* Ningún socio aparece en ambos listados a la vez.
+
+#### R.F.04. Consulta de socios por membresía
+
+Como administrador
+quiero consultar los socios según la membresía contratada
+para conocer qué socios tiene cada plan.
+
+**Prueba de aceptación**
+* Al seleccionar una membresía, se muestran únicamente los socios que la tienen contratada.
+* Si ningún socio tiene esa membresía, se muestra un listado vacío.
+
+#### R.F.05. Consulta de la ficha física de un socio
+
+Como recepcionista
+quiero consultar la ficha física de un socio
+para conocer su información registrada.
+
+**Prueba de aceptación**
+* Se muestran el peso, la altura, el objetivo deportivo y las observaciones del socio (RI-02).
+* Se muestran las fechas de creación y de última actualización.
+* Si el socio no tiene ficha física, el sistema lo indica.
+
+#### R.F.06. Consulta de fichas físicas actualizadas en un periodo
+
+Como administrador
+quiero consultar las fichas actualizadas en un periodo
+para controlar su mantenimiento.
+
+**Prueba de aceptación**
+* Se muestran solo las fichas cuya fecha de última actualización está dentro del periodo indicado.
+* Cada ficha se muestra junto al socio al que pertenece.
+* Si el periodo no es válido (fecha de inicio posterior a la de fin), el sistema lo rechaza.
+
+#### R.F.07. Consulta de socios por objetivo deportivo
+
+Como administrador
+quiero consultar los socios según su objetivo deportivo
+para conocer qué buscan los socios del gimnasio.
+
+**Prueba de aceptación**
+* Al indicar un objetivo, se muestran los socios cuya ficha física tiene ese objetivo.
+* Los socios sin ficha física no aparecen en el resultado.
+
+#### R.F.08. Consulta de peso, altura y fecha de actualización
+
+Como socio
+quiero consultar el peso, la altura y la fecha de actualización de mi ficha
+para comprobar mis datos físicos.
+
+**Prueba de aceptación**
+* Se muestran el peso, la altura y la fecha de última actualización de la ficha del socio.
+* Un socio solo puede consultar su propia ficha.
+
+#### R.F.09. Listado de membresías disponibles
+
+Como recepcionista
+quiero consultar las membresías disponibles
+para informar a los clientes.
+
+**Prueba de aceptación**
+* Se muestran únicamente las membresías cuyo estado es disponible.
+* Para cada una se muestran nombre, precio y duración.
+
+#### R.F.10. Consulta de una membresía concreta
+
+Como socio
+quiero consultar los datos de mi membresía
+para conocer sus condiciones.
+
+**Prueba de aceptación**
+* Se muestran el nombre, la descripción, el precio, la duración y los servicios incluidos (RI-03).
+* Si la membresía no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.11. Consulta de socios por membresía
+
+Como administrador
+quiero consultar los socios asociados a cada membresía
+para conocer quién tiene contratado cada plan.
+
+**Prueba de aceptación**
+* Para cada membresía se muestran los socios que la tienen contratada.
+* Las membresías sin socios aparecen con una lista vacía.
+
+#### R.F.12. Número de socios por tipo de membresía
+
+Como administrador
+quiero consultar el número de socios de cada membresía
+para conocer su popularidad.
+
+**Prueba de aceptación**
+* Se muestra, para cada membresía, el número de socios que la tienen contratada.
+* La suma de los totales coincide con el número de socios con membresía.
+
+#### R.F.13. Listado de entrenadores
+
+Como administrador
+quiero consultar el listado completo de entrenadores
+para conocer la plantilla del gimnasio.
+
+**Prueba de aceptación**
+* Se muestran todos los entrenadores registrados.
+* Para cada uno se muestran nombre, apellidos, especialidad y estado laboral.
+
+#### R.F.14. Consulta de un entrenador concreto
+
+Como entrenador
+quiero consultar mis datos personales y profesionales
+para comprobar que son correctos.
+
+**Prueba de aceptación**
+* Se muestran todos los datos del entrenador (RI-04).
+* Un entrenador solo puede consultar sus propios datos.
+
+#### R.F.15. Consulta de entrenadores por especialidad
+
+Como recepcionista
+quiero consultar los entrenadores según su especialidad
+para informar a los socios.
+
+**Prueba de aceptación**
+* Al indicar una especialidad, se muestran solo los entrenadores que la tienen.
+* Si ningún entrenador tiene esa especialidad, se muestra un listado vacío.
+
+#### R.F.16. Consulta de clases impartidas por un entrenador
+
+Como entrenador
+quiero consultar mis clases asignadas
+para organizar mi horario.
+
+**Prueba de aceptación**
+* Se muestran las clases asignadas al entrenador con su fecha, hora y sala.
+* No se muestran clases de otros entrenadores.
+* Se debe aplicar la regla de negocio R.N.04.
+
+#### R.F.17. Listado de salas
+
+Como administrador
+quiero consultar el listado completo de salas
+para conocer las instalaciones del gimnasio.
+
+**Prueba de aceptación**
+* Se muestran todas las salas registradas.
+* Para cada una se muestran nombre, aforo máximo y estado de disponibilidad.
+
+#### R.F.18. Consulta de una sala concreta
+
+Como recepcionista
+quiero consultar los datos de una sala
+para informar a los socios.
+
+**Prueba de aceptación**
+* Se muestran el nombre, la ubicación, el aforo, el tipo de actividad y la disponibilidad (RI-05).
+* Si la sala no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.19. Consulta de clases asignadas a una sala
+
+Como entrenador
+quiero consultar la sala asignada a cada clase
+para saber dónde se imparte.
+
+**Prueba de aceptación**
+* Para una sala se muestran las clases que tiene programadas.
+* Las clases se muestran ordenadas por fecha y hora.
+* Se debe aplicar la regla de negocio R.N.04.
+
+#### R.F.20. Consulta de salas disponibles
+
+Como recepcionista
+quiero consultar las salas disponibles en una fecha y franja horaria
+para conocer su ocupación.
+
+**Prueba de aceptación**
+* Se muestran únicamente las salas sin ninguna clase cuyo horario coincida con la franja indicada.
+* Una sala con una clase que solape parcialmente la franja no aparece como disponible.
+* Se debe aplicar la regla de negocio R.N.04.
+
+#### R.F.21. Listado de clases programadas
+
+Como socio
+quiero consultar las clases programadas
+para decidir cuáles reservar.
+
+**Prueba de aceptación**
+* Se muestran las clases con su nombre, fecha, hora, entrenador y sala.
+* No se muestran las clases canceladas.
+
+#### R.F.22. Consulta de clases por fecha
+
+Como socio
+quiero consultar las clases programadas para una fecha concreta
+para organizar mi día.
+
+**Prueba de aceptación**
+* Solo se muestran las clases de la fecha indicada.
+* Las clases aparecen ordenadas por hora de inicio.
+* Si no hay clases ese día, se muestra un listado vacío.
+
+#### R.F.23. Consulta de clases por nivel de dificultad
+
+Como socio
+quiero consultar las clases según su nivel de dificultad
+para elegir las que se adaptan a mi condición física.
+
+**Prueba de aceptación**
+* Al indicar un nivel, se muestran solo las clases de ese nivel.
+* Cada clase muestra su nombre, fecha y hora.
+
+#### R.F.24. Consulta de plazas disponibles
+
+Como recepcionista
+quiero consultar las plazas disponibles de cada clase
+para informar a los socios antes de reservar.
+
+**Prueba de aceptación**
+* Para cada clase se muestra el número de plazas libres, calculado como el máximo de participantes menos las reservas activas.
+* Una clase completa muestra cero plazas disponibles.
+* Las reservas canceladas no cuentan como plazas ocupadas.
+* Se debe aplicar la regla de negocio R.N.02.
+
+#### R.F.25. Consulta de reservas de un socio
+
+Como recepcionista
+quiero consultar las reservas de un socio
+para ayudarle con sus gestiones.
+
+**Prueba de aceptación**
+* Se muestran todas las reservas del socio con la clase, la fecha y el estado.
+* Un socio que consulta sus propias reservas solo ve las suyas.
+* Se debe aplicar la regla de negocio R.N.01.
+
+#### R.F.26. Consulta de socios inscritos en una clase
+
+Como entrenador
+quiero consultar los socios inscritos en mis clases
+para conocer los asistentes.
+
+**Prueba de aceptación**
+* Se muestran únicamente los socios con una reserva activa en la clase indicada.
+* El número de socios mostrados no supera el máximo de participantes de la clase.
+* Se debe aplicar la regla de negocio R.N.02.
+
+#### R.F.27. Consulta de reservas activas y canceladas
+
+Como administrador
+quiero consultar las reservas activas y canceladas
+para supervisar la actividad del gimnasio.
+
+**Prueba de aceptación**
+* Se puede filtrar el listado por estado activa o cancelada.
+* Cada reserva se muestra con el socio, la clase y la fecha de realización (RI-07).
+
+#### R.F.28. Clases con mayor número de reservas
+
+Como administrador
+quiero consultar las clases con más reservas
+para conocer las actividades más demandadas.
+
+**Prueba de aceptación**
+* Las clases se muestran ordenadas de mayor a menor número de reservas activas.
+* Para cada clase se muestra su número de reservas.
+
+#### R.F.29. Consulta de pagos de un socio
+
+Como socio
+quiero consultar mis pagos
+para comprobar los importes abonados.
+
+**Prueba de aceptación**
+* Se muestran todos los pagos del socio con fecha, importe, método y concepto (RI-08).
+* Un socio solo puede consultar sus propios pagos.
+* Se debe aplicar la regla de negocio R.N.05.
+
+#### R.F.30. Consulta de pagos en un periodo
+
+Como recepcionista
+quiero consultar los pagos realizados en un periodo
+para mantener actualizada la situación de los socios.
+
+**Prueba de aceptación**
+* Se muestran solo los pagos con fecha dentro del periodo indicado.
+* Si el periodo no es válido, el sistema lo rechaza.
+* Se debe aplicar la regla de negocio R.N.05.
+
+#### R.F.31. Consulta de ingresos mensuales
+
+Como administrador
+quiero consultar los ingresos mensuales
+para analizar la evolución del gimnasio.
+
+**Prueba de aceptación**
+* Se muestra, para cada mes, la suma de los importes de los pagos realizados.
+* Los meses sin pagos muestran un total de cero.
+
+#### R.F.32. Consulta de ingresos por método de pago
+
+Como administrador
+quiero consultar los ingresos según el método de pago
+para conocer cómo pagan los socios.
+
+**Prueba de aceptación**
+* Se muestra el total de ingresos para efectivo, tarjeta y transferencia.
+* La suma de los tres totales coincide con los ingresos totales.
+* Se debe aplicar la regla de negocio R.N.05.
+
 
 #### 4.1.1. Requisitos de información
 

@@ -44,8 +44,6 @@ Con esta base de datos se busca reducir errores. Se busca hacer más rápido el 
 - **RG-07:** El sistema deberá gestionar las reservas de los socios.
 - **RG-08:** El sistema deberá gestionar los pagos.
 - **RG-09:** El sistema deberá controlar la asistencia de los socios.
-- **RG-10:** El sistema deberá gestionar las rutinas de los socios.
-- **RG-11:** El sistema deberá gestionar los ejercicios de las rutinas.
 
 
 ### 2.2. Usuarios del sistema

@@ -70,7 +70,6 @@ Con esta base de datos se busca reducir errores. Se busca hacer más rápido el 
 - **RG-09:** El sistema deberá controlar las plazas disponibles en cada clase.
 - **RG-10:** El sistema deberá evitar conflictos entre horarios, entrenadores y salas.
 - **RG-11:** El sistema deberá permitir obtener listados y realizar consultas.
-- **RG-12:** El sistema deberá centralizar toda la información en una base de datos compatible con MariaDB.
 
 
 ### 3.2. Usuarios del sistema

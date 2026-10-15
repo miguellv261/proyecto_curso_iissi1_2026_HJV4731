@@ -6,6 +6,8 @@
  - Jerez Gavira, Alejandro
  - Alaya Sotillo, José
 
+contraseña, email, tipo de usuario, ficha fisica dentro de socio, RN DE AFORO, RN CLASE EN SALA, RN MEMBRESIA, TRIGGER ENTRENADOR
+
 
 ## 1. Introducción al problema
 

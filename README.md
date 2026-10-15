@@ -61,15 +61,15 @@ Con esta base de datos se busca reducir errores. Se busca hacer más rápido el 
 
 - **RG-01:** El sistema deberá gestionar la información de los socios.
 - **RG-02:** El sistema deberá gestionar las fichas físicas de los socios.
-- **RG-03:** El sistema deberá gestionar los diferentes tipos de membresía.
-- **RG-04:** El sistema deberá gestionar la información de los entrenadores.
+- **RG-03:** El sistema deberá gestionar la membresía.
+- **RG-04:** El sistema deberá gestionar los entrenadores.
 - **RG-05:** El sistema deberá gestionar las salas del gimnasio.
-- **RG-06:** El sistema deberá gestionar la programación de clases.
+- **RG-06:** El sistema deberá gestionar las clases.
 - **RG-07:** El sistema deberá gestionar las reservas de los socios.
 - **RG-08:** El sistema deberá gestionar los pagos.
-- **RG-09:** El sistema deberá controlar las plazas disponibles en cada clase.
-- **RG-10:** El sistema deberá evitar conflictos entre horarios, entrenadores y salas.
-- **RG-11:** El sistema deberá permitir obtener listados y realizar consultas.
+- **RG-09:** El sistema deberá controlar la asistencia de los socios.
+- **RG-10:** El sistema deberá gestionar las rutinas de los socios.
+- **RG-11:** El sistema deberá gestionar los ejercicios de las rutinas.
 
 
 ### 3.2. Usuarios del sistema

@@ -29,33 +29,7 @@ Para resolver estos problemas, se quiere crear una base de datos. Esta base de d
 
 Con esta base de datos se busca reducir errores. Se busca hacer más rápido el trabajo administrativo. Se busca mejorar la organización. Se quiere tener información precisa y actualizada. Esto dará una estructura adecuada para el futuro del gimnasio.
 
-
-## 2. Glosario de términos
-
-- **Aforo:** número máximo de personas que pueden estar en una sala o clase al mismo tiempo. Indica cuántas reservas se pueden hacer.
-
-- **Asistencia:** registro de que un socio realmente acudió a una clase, a un entrenamiento o a las instalaciones en una fecha y hora específicas. Se diferencia de la reserva, que es solo la intención de asistir.
-
-- **Clase:** sesión de actividad física grupal que imparte un entrenador en una sala y en un horario determinado. Tiene un aforo limitado y los socios se apuntan mediante reserva.
-
-- **Cuota:** dinero que paga el socio periódicamente (mensual, trimestral o anual) por su membresía. El precio varía según la tarifa que tenga contratada.
-
-- **Entrenador:** persona del gimnasio que imparte clases y también diseña y supervisa las rutinas y entrenamientos personalizados de los socios.
-
-- **Membresía:** acuerdo o plan que permite al socio usar los servicios del gimnasio durante un tiempo. Puede ser básica, completa, familiar, de estudiante, entre otras.
-
-- **Pago:** acción mediante la cual un socio abona una cuota o un servicio. Se registra con la fecha, el importe, el método de pago y el estado (pagado, pendiente o devuelto).
-
-- **Reserva:** petición de un socio para tener un lugar en una clase o sesión específica. Puede estar confirmada, en lista de espera, cancelada o terminada.
-
-- **Rutina:** conjunto de ejercicios planificados, con su orden, series y repeticiones, que un entrenador asigna a un socio para alcanzar un objetivo concreto.
-
-- **Sala:** espacio físico del gimnasio donde se realizan actividades como spinning, yoga o musculación. Tiene un límite de personas y horarios definidos.
-
-- **Socio:** persona registrada en el gimnasio que tiene una membresía activa. Puede usar las instalaciones, reservar clases y solicitar entrenamientos personalizados.
-
-
-## 3. Visión general del sistema
+## 2. Visión general del sistema
 
 ### 3.1. Requisitos generales
 
@@ -72,7 +46,7 @@ Con esta base de datos se busca reducir errores. Se busca hacer más rápido el 
 - **RG-11:** El sistema deberá gestionar los ejercicios de las rutinas.
 
 
-### 3.2. Usuarios del sistema
+### 2.2. Usuarios del sistema
 
 #### Administrador
 
@@ -85,16 +59,6 @@ Es el usuario con mayor nivel de acceso. Sus funciones principales serán:
 - Obtener información sobre ingresos y ocupación.
 - Supervisar el funcionamiento general de IISSIFIT.
 
-#### Recepcionista
-
-Es el personal encargado de atender a los socios. Sus funciones principales serán:
-
-- Registrar y consultar socios.
-- Consultar las fichas físicas.
-- Consultar las membresías disponibles.
-- Consultar clases y plazas disponibles.
-- Gestionar las reservas.
-- Registrar los pagos de los socios.
 
 #### Entrenador
 
@@ -117,9 +81,9 @@ Es el cliente registrado en el gimnasio. Sus funciones principales serán:
 - Consultar los pagos realizados.
 
 
-## 4. Catálogo de requisitos
+## 3. Catálogo de requisitos
 
-### 4.1. Requisitos funcionales
+### 3.1. Requisitos funcionales
 
 #### R.F.01. Listado de socios
 
@@ -489,11 +453,11 @@ para conocer cómo pagan los socios.
 * La suma de los tres totales coincide con los ingresos totales.
 * Se debe aplicar la regla de negocio R.N.05.
 
-#### 4.1.1. Requisitos de información
+#### 3.1.1. Requisitos de información
 
 ##### RI-01. Información de los socios
 
-De cada socio se almacenará:
+De cada socio se almacenará: en linea,,,,
 
 - Identificador único.
 - DNI.
@@ -596,7 +560,7 @@ De cada pago se almacenará:
 - Concepto.
 - Estado.
 
-#### 4.1.2. Reglas de negocio
+#### 3.1.2. Reglas de negocio
 
 ##### RN-01. Validez de una reserva
 
@@ -639,17 +603,8 @@ Un entrenador no podrá impartir dos clases simultáneamente. Una sala tampoco p
 - Sala.
 - Clase.
 
-##### RN-05. Validez de un pago
 
-Todo pago deberá estar asociado a un socio registrado y a una membresía. Su importe deberá ser superior a cero y el método de pago tendrá que ser efectivo, tarjeta o transferencia.
-
-**Entidades implicadas:**
-
-- Socio.
-- Membresía.
-- Pago.
-
-### 4.2. Mapa de historias de usuario (opcional)
+### 3.2. Mapa de historias de usuario (opcional) de forma grafica******
 
 #### Gestión de socios
 
@@ -736,7 +691,7 @@ Como administrador
 quiero que la base de datos funcione correctamente en un servidor MariaDB  
 para poder desplegarla en la infraestructura prevista.
 
-**R.N.F. 08. Mantenimiento**  
+**R.N.F. 08. Mantenibilidad**
 Como administrador  
 quiero poder añadir nuevas salas, clases, membresías y servicios  
 para ampliar la oferta del gimnasio sin modificar la estructura del sistema.

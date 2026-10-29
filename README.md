@@ -35,10 +35,10 @@ Con esta base de datos se busca reducir errores. Se busca hacer más rápido el 
 
 ### 2.1. Requisitos generales
 
-- **RG-01:** El sistema deberá gestionar la información de los socios.
-- **RG-02:** El sistema deberá gestionar las fichas físicas de los socios.
+- **RG-01:** El sistema deberá gestionar a los socios.
+- **RG-02:** El sistema deberá gestionar a los administradores.
 - **RG-03:** El sistema deberá gestionar la membresía.
-- **RG-04:** El sistema deberá gestionar los entrenadores.
+- **RG-04:** El sistema deberá gestionar a los entrenadores.
 - **RG-05:** El sistema deberá gestionar las salas del gimnasio.
 - **RG-06:** El sistema deberá gestionar las clases.
 - **RG-07:** El sistema deberá gestionar las reservas de los socios.

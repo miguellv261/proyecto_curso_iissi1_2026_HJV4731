@@ -97,130 +97,143 @@ para localizar rápidamente a cualquier socio registrado.
 * Para cada socio se muestran su identificador, nombre, apellidos y estado.
 * Si no hay socios registrados, se muestra un listado vacío.
 
-#### R.F.02. Consulta de un socio concreto
+#### R.F.02. Creación de socios
 
-Como socio  
-quiero consultar mis datos personales  
-para comprobar que son correctos.
+Como recepcionista  
+quiero registrar un nuevo socio  
+para mantener actualizada la información del gimnasio.
 
 **Prueba de aceptación**
 
-* Se muestran todos los datos del socio indicado (RI-01).
-* Un socio solo puede consultar sus propios datos.
+* Se almacenan todos los datos del socio indicados en RI-01.
+* El socio queda registrado con estado activo y con la fecha de alta del día.
+* Si ya existe un socio con el mismo DNI, el sistema rechaza el registro.
+* Si falta algún dato obligatorio, el sistema rechaza el registro.
+
+#### R.F.03. Edición de socios
+
+Como recepcionista  
+quiero modificar los datos de un socio  
+para mantener su información correcta y actualizada.
+
+**Prueba de aceptación**
+
+* Se actualizan los datos modificados del socio (RI-01) y se conservan los demás.
+* No se puede asignar un DNI que ya pertenezca a otro socio.
+* Se puede cambiar el estado del socio entre activo e inactivo.
 * Si el socio no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.03. Consulta de socios activos e inactivos
+#### R.F.04. Borrado de socios
 
 Como administrador  
-quiero consultar los socios activos e inactivos  
-para conocer la situación del gimnasio.
+quiero eliminar un socio del sistema  
+para depurar registros que ya no son necesarios.
 
 **Prueba de aceptación**
 
-* Se puede filtrar el listado por estado activo o inactivo.
-* El número de socios mostrados coincide con el estado seleccionado.
-* Ningún socio aparece en ambos listados a la vez.
+* El socio eliminado deja de aparecer en el listado de socios.
+* Si el socio tiene reservas o pagos asociados, el sistema impide el borrado.
+* Si el socio no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.04. Consulta de socios por membresía
-
-Como administrador  
-quiero consultar los socios según la membresía contratada  
-para conocer qué socios tiene cada plan.
-
-**Prueba de aceptación**
-
-* Al seleccionar una membresía, se muestran únicamente los socios que la tienen contratada.
-* Si ningún socio tiene esa membresía, se muestra un listado vacío.
-
-#### R.F.05. Consulta de la ficha física de un socio
+#### R.F.05. Listado de fichas físicas
 
 Como recepcionista  
-quiero consultar la ficha física de un socio  
-para conocer su información registrada.
+quiero consultar el listado de fichas físicas  
+para conocer la información física registrada de los socios.
 
 **Prueba de aceptación**
 
-* Se muestran el peso, la altura, el objetivo deportivo y las observaciones del socio (RI-02).
-* Se muestran las fechas de creación y de última actualización.
+* Se muestran todas las fichas físicas registradas, cada una junto al socio al que pertenece.
+* Para cada ficha se muestran el peso, la altura, el objetivo deportivo y la fecha de última actualización (RI-02).
+* Si no hay fichas registradas, se muestra un listado vacío.
+
+#### R.F.06. Creación de fichas físicas
+
+Como recepcionista  
+quiero crear la ficha física de un socio  
+para registrar su situación física y su objetivo deportivo.
+
+**Prueba de aceptación**
+
+* Se almacenan el peso, la altura, el objetivo deportivo y las observaciones del socio (RI-02).
+* Las fechas de creación y de última actualización se establecen con la fecha del día.
+* Un socio no puede tener más de una ficha física.
+* Si el socio no existe, el sistema rechaza la creación.
+
+#### R.F.07. Edición de fichas físicas
+
+Como recepcionista  
+quiero modificar la ficha física de un socio  
+para mantener actualizados sus datos físicos.
+
+**Prueba de aceptación**
+
+* Se actualizan los datos modificados de la ficha (RI-02) y se conservan los demás.
+* La fecha de última actualización se establece con la fecha del día.
+* La fecha de creación no se modifica.
 * Si el socio no tiene ficha física, el sistema lo indica.
 
-#### R.F.06. Consulta de fichas físicas actualizadas en un periodo
+#### R.F.08. Borrado de fichas físicas
 
 Como administrador  
-quiero consultar las fichas actualizadas en un periodo  
-para controlar su mantenimiento.
+quiero eliminar la ficha física de un socio  
+para eliminar información que ya no es necesaria.
 
 **Prueba de aceptación**
 
-* Se muestran solo las fichas cuya fecha de última actualización está dentro del periodo indicado.
-* Cada ficha se muestra junto al socio al que pertenece.
-* Si el periodo no es válido (fecha de inicio posterior a la de fin), el sistema lo rechaza.
+* La ficha eliminada deja de mostrarse en el listado de fichas físicas.
+* El socio al que pertenecía la ficha no se elimina.
+* Si la ficha no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.07. Consulta de socios por objetivo deportivo
-
-Como administrador  
-quiero consultar los socios según su objetivo deportivo  
-para conocer qué buscan los socios del gimnasio.
-
-**Prueba de aceptación**
-
-* Al indicar un objetivo, se muestran los socios cuya ficha física tiene ese objetivo.
-* Los socios sin ficha física no aparecen en el resultado.
-
-#### R.F.08. Consulta de peso, altura y fecha de actualización
-
-Como socio  
-quiero consultar el peso, la altura y la fecha de actualización de mi ficha  
-para comprobar mis datos físicos.
-
-**Prueba de aceptación**
-
-* Se muestran el peso, la altura y la fecha de última actualización de la ficha del socio.
-* Un socio solo puede consultar su propia ficha.
-
-#### R.F.09. Listado de membresías disponibles
+#### R.F.09. Listado de membresías
 
 Como recepcionista  
-quiero consultar las membresías disponibles  
+quiero consultar las membresías ofrecidas  
 para informar a los clientes.
 
 **Prueba de aceptación**
 
-* Se muestran únicamente las membresías cuyo estado es disponible.
-* Para cada una se muestran nombre, precio y duración.
+* Se muestran todas las membresías registradas.
+* Para cada una se muestran nombre, precio, duración y estado de disponibilidad (RI-03).
+* Si no hay membresías registradas, se muestra un listado vacío.
 
-#### R.F.10. Consulta de una membresía concreta
+#### R.F.10. Creación de membresías
 
-Como socio  
-quiero consultar los datos de mi membresía  
-para conocer sus condiciones.
+Como administrador  
+quiero crear una nueva membresía  
+para ampliar la oferta del gimnasio.
 
 **Prueba de aceptación**
 
-* Se muestran el nombre, la descripción, el precio, la duración y los servicios incluidos (RI-03).
+* Se almacenan el nombre, la descripción, el precio, la duración y los servicios incluidos (RI-03).
+* La membresía se crea con estado disponible.
+* El precio debe ser mayor o igual que cero y la duración mayor que cero.
+* No se puede crear una membresía con el mismo nombre que otra existente.
+
+#### R.F.11. Edición de membresías
+
+Como administrador  
+quiero modificar los datos de una membresía  
+para actualizar sus condiciones, como el precio o los servicios incluidos.
+
+**Prueba de aceptación**
+
+* Se actualizan los datos modificados de la membresía (RI-03) y se conservan los demás.
+* Se puede cambiar el estado de disponibilidad de la membresía.
+* Los socios que ya tienen contratada la membresía mantienen su asociación.
 * Si la membresía no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.11. Consulta de socios por membresía
+#### R.F.12. Borrado de membresías
 
 Como administrador  
-quiero consultar los socios asociados a cada membresía  
-para conocer quién tiene contratado cada plan.
+quiero eliminar una membresía  
+para retirar planes que ya no se ofrecen.
 
 **Prueba de aceptación**
 
-* Para cada membresía se muestran los socios que la tienen contratada.
-* Las membresías sin socios aparecen con una lista vacía.
-
-#### R.F.12. Número de socios por tipo de membresía
-
-Como administrador  
-quiero consultar el número de socios de cada membresía  
-para conocer su popularidad.
-
-**Prueba de aceptación**
-
-* Se muestra, para cada membresía, el número de socios que la tienen contratada.
-* La suma de los totales coincide con el número de socios con membresía.
+* La membresía eliminada deja de aparecer en el listado de membresías.
+* Si hay socios con la membresía contratada, el sistema impide el borrado.
+* Si la membresía no existe, el sistema informa de que no se ha encontrado.
 
 #### R.F.13. Listado de entrenadores
 
@@ -231,41 +244,45 @@ para conocer la plantilla del gimnasio.
 **Prueba de aceptación**
 
 * Se muestran todos los entrenadores registrados.
-* Para cada uno se muestran nombre, apellidos, especialidad y estado laboral.
+* Para cada uno se muestran nombre, apellidos, especialidad y estado laboral (RI-04).
+* Si no hay entrenadores registrados, se muestra un listado vacío.
 
-#### R.F.14. Consulta de un entrenador concreto
+#### R.F.14. Creación de entrenadores
 
-Como entrenador  
-quiero consultar mis datos personales y profesionales  
-para comprobar que son correctos.
-
-**Prueba de aceptación**
-
-* Se muestran todos los datos del entrenador (RI-04).
-* Un entrenador solo puede consultar sus propios datos.
-
-#### R.F.15. Consulta de entrenadores por especialidad
-
-Como recepcionista  
-quiero consultar los entrenadores según su especialidad  
-para informar a los socios.
+Como administrador  
+quiero registrar un nuevo entrenador  
+para incorporarlo a la plantilla del gimnasio.
 
 **Prueba de aceptación**
 
-* Al indicar una especialidad, se muestran solo los entrenadores que la tienen.
-* Si ningún entrenador tiene esa especialidad, se muestra un listado vacío.
+* Se almacenan todos los datos del entrenador indicados en RI-04.
+* Si ya existe un entrenador con el mismo DNI, el sistema rechaza el registro.
+* Si falta algún dato obligatorio, el sistema rechaza el registro.
 
-#### R.F.16. Consulta de clases impartidas por un entrenador
+#### R.F.15. Edición de entrenadores
 
-Como entrenador  
-quiero consultar mis clases asignadas  
-para organizar mi horario.
+Como administrador  
+quiero modificar los datos de un entrenador  
+para mantener actualizada la plantilla.
 
 **Prueba de aceptación**
 
-* Se muestran las clases asignadas al entrenador con su fecha, hora y sala.
-* No se muestran clases de otros entrenadores.
-* Se debe aplicar la regla de negocio R.N.04.
+* Se actualizan los datos modificados del entrenador (RI-04) y se conservan los demás.
+* No se puede asignar un DNI que ya pertenezca a otro entrenador.
+* Se puede cambiar el estado laboral del entrenador.
+* Si el entrenador no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.16. Borrado de entrenadores
+
+Como administrador  
+quiero eliminar un entrenador del sistema  
+para depurar registros de personal que ya no es necesario.
+
+**Prueba de aceptación**
+
+* El entrenador eliminado deja de aparecer en el listado de entrenadores.
+* Si el entrenador tiene clases asignadas, el sistema impide el borrado.
+* Si el entrenador no existe, el sistema informa de que no se ha encontrado.
 
 #### R.F.17. Listado de salas
 
@@ -276,44 +293,47 @@ para conocer las instalaciones del gimnasio.
 **Prueba de aceptación**
 
 * Se muestran todas las salas registradas.
-* Para cada una se muestran nombre, aforo máximo y estado de disponibilidad.
+* Para cada una se muestran nombre, aforo máximo y estado de disponibilidad (RI-05).
+* Si no hay salas registradas, se muestra un listado vacío.
 
-#### R.F.18. Consulta de una sala concreta
+#### R.F.18. Creación de salas
 
-Como recepcionista  
-quiero consultar los datos de una sala  
-para informar a los socios.
+Como administrador  
+quiero crear una nueva sala  
+para ampliar las instalaciones del gimnasio.
 
 **Prueba de aceptación**
 
-* Se muestran el nombre, la ubicación, el aforo, el tipo de actividad y la disponibilidad (RI-05).
+* Se almacenan el nombre, la ubicación, el aforo máximo, el tipo de actividad y la disponibilidad (RI-05).
+* El aforo máximo debe ser mayor que cero.
+* No se puede crear una sala con el mismo nombre que otra existente.
+
+#### R.F.19. Edición de salas
+
+Como administrador  
+quiero modificar los datos de una sala  
+para mantener actualizada la información de las instalaciones.
+
+**Prueba de aceptación**
+
+* Se actualizan los datos modificados de la sala (RI-05) y se conservan los demás.
+* No se puede reducir el aforo por debajo del máximo de participantes de una clase asignada a la sala.
+* Se debe aplicar la regla de negocio R.N.02.
 * Si la sala no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.19. Consulta de clases asignadas a una sala
+#### R.F.20. Borrado de salas
 
-Como entrenador  
-quiero consultar la sala asignada a cada clase  
-para saber dónde se imparte.
-
-**Prueba de aceptación**
-
-* Para una sala se muestran las clases que tiene programadas.
-* Las clases se muestran ordenadas por fecha y hora.
-* Se debe aplicar la regla de negocio R.N.04.
-
-#### R.F.20. Consulta de salas disponibles
-
-Como recepcionista  
-quiero consultar las salas disponibles en una fecha y franja horaria  
-para conocer su ocupación.
+Como administrador  
+quiero eliminar una sala  
+para retirar espacios que ya no se utilizan.
 
 **Prueba de aceptación**
 
-* Se muestran únicamente las salas sin ninguna clase cuyo horario coincida con la franja indicada.
-* Una sala con una clase que solape parcialmente la franja no aparece como disponible.
-* Se debe aplicar la regla de negocio R.N.04.
+* La sala eliminada deja de aparecer en el listado de salas.
+* Si la sala tiene clases asignadas, el sistema impide el borrado.
+* Si la sala no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.21. Listado de clases programadas
+#### R.F.21. Listado de clases
 
 Como socio  
 quiero consultar las clases programadas  
@@ -321,137 +341,200 @@ para decidir cuáles reservar.
 
 **Prueba de aceptación**
 
-* Se muestran las clases con su nombre, fecha, hora, entrenador y sala.
+* Se muestran las clases con su nombre, fecha, hora, entrenador y sala (RI-06).
 * No se muestran las clases canceladas.
+* Si no hay clases programadas, se muestra un listado vacío.
 
-#### R.F.22. Consulta de clases por fecha
-
-Como socio  
-quiero consultar las clases programadas para una fecha concreta  
-para organizar mi día.
-
-**Prueba de aceptación**
-
-* Solo se muestran las clases de la fecha indicada.
-* Las clases aparecen ordenadas por hora de inicio.
-* Si no hay clases ese día, se muestra un listado vacío.
-
-#### R.F.23. Consulta de clases por nivel de dificultad
-
-Como socio  
-quiero consultar las clases según su nivel de dificultad  
-para elegir las que se adaptan a mi condición física.
-
-**Prueba de aceptación**
-
-* Al indicar un nivel, se muestran solo las clases de ese nivel.
-* Cada clase muestra su nombre, fecha y hora.
-
-#### R.F.24. Consulta de plazas disponibles
-
-Como recepcionista  
-quiero consultar las plazas disponibles de cada clase  
-para informar a los socios antes de reservar.
-
-**Prueba de aceptación**
-
-* Para cada clase se muestra el número de plazas libres, calculado como el máximo de participantes menos las reservas activas.
-* Una clase completa muestra cero plazas disponibles.
-* Las reservas canceladas no cuentan como plazas ocupadas.
-* Se debe aplicar la regla de negocio R.N.02.
-
-#### R.F.25. Consulta de reservas de un socio
-
-Como recepcionista  
-quiero consultar las reservas de un socio  
-para ayudarle con sus gestiones.
-
-**Prueba de aceptación**
-
-* Se muestran todas las reservas del socio con la clase, la fecha y el estado.
-* Un socio que consulta sus propias reservas solo ve las suyas.
-* Se debe aplicar la regla de negocio R.N.01.
-
-#### R.F.26. Consulta de socios inscritos en una clase
-
-Como entrenador  
-quiero consultar los socios inscritos en mis clases  
-para conocer los asistentes.
-
-**Prueba de aceptación**
-
-* Se muestran únicamente los socios con una reserva activa en la clase indicada.
-* El número de socios mostrados no supera el máximo de participantes de la clase.
-* Se debe aplicar la regla de negocio R.N.02.
-
-#### R.F.27. Consulta de reservas activas y canceladas
+#### R.F.22. Creación de clases
 
 Como administrador  
-quiero consultar las reservas activas y canceladas  
-para supervisar la actividad del gimnasio.
+quiero programar una nueva clase  
+para organizar la oferta de actividades del gimnasio.
 
 **Prueba de aceptación**
 
-* Se puede filtrar el listado por estado activa o cancelada.
-* Cada reserva se muestra con el socio, la clase y la fecha de realización (RI-07).
+* Se almacenan todos los datos de la clase indicados en RI-06, incluyendo el entrenador responsable y la sala asignada.
+* El número máximo de participantes no puede superar el aforo de la sala asignada.
+* El entrenador y la sala no pueden tener otra clase cuyo horario coincida con la nueva.
+* Se deben aplicar las reglas de negocio R.N.02 y R.N.04.
 
-#### R.F.28. Clases con mayor número de reservas
+#### R.F.23. Edición de clases
 
 Como administrador  
-quiero consultar las clases con más reservas  
-para conocer las actividades más demandadas.
+quiero modificar los datos de una clase  
+para adaptar la programación a los cambios necesarios.
 
 **Prueba de aceptación**
 
-* Las clases se muestran ordenadas de mayor a menor número de reservas activas.
-* Para cada clase se muestra su número de reservas.
+* Se actualizan los datos modificados de la clase (RI-06) y se conservan los demás.
+* Si se cambia el horario, el entrenador o la sala, no puede haber coincidencia con otra clase.
+* El número máximo de participantes no puede ser inferior al número de reservas activas ni superior al aforo de la sala.
+* Se deben aplicar las reglas de negocio R.N.02 y R.N.04.
+* Si la clase no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.29. Consulta de pagos de un socio
+#### R.F.24. Borrado de clases
 
-Como socio  
-quiero consultar mis pagos  
-para comprobar los importes abonados.
+Como administrador  
+quiero eliminar una clase  
+para retirar de la programación las clases que no se van a impartir.
 
 **Prueba de aceptación**
 
-* Se muestran todos los pagos del socio con fecha, importe, método y concepto (RI-08).
-* Un socio solo puede consultar sus propios pagos.
-* Se debe aplicar la regla de negocio R.N.05.
+* La clase eliminada deja de aparecer en el listado de clases.
+* Si la clase tiene reservas activas, el sistema impide el borrado.
+* Si la clase no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.30. Consulta de pagos en un periodo
+#### R.F.25. Listado de reservas
 
 Como recepcionista  
-quiero consultar los pagos realizados en un periodo  
+quiero consultar las reservas de los socios  
+para ayudarles con sus gestiones.
+
+**Prueba de aceptación**
+
+* Se muestran las reservas con el socio, la clase, la fecha de realización y el estado (RI-07).
+* Se puede filtrar el listado por socio y por estado activa o cancelada.
+* Un socio que consulta sus reservas solo ve las suyas.
+* Si no hay reservas, se muestra un listado vacío.
+
+#### R.F.26. Creación de reservas
+
+Como socio  
+quiero reservar una clase  
+para asegurar mi plaza en la actividad.
+
+**Prueba de aceptación**
+
+* La reserva se crea con estado activa y con la fecha y hora de realización actuales.
+* El socio debe estar activo, tener una membresía vigente y la clase debe tener plazas disponibles.
+* El socio no puede tener otra reserva activa en una clase cuyo horario coincida.
+* Se deben aplicar las reglas de negocio R.N.01, R.N.02 y R.N.03.
+
+#### R.F.27. Edición de reservas
+
+Como socio  
+quiero cancelar o cambiar una reserva  
+para organizar mis actividades.
+
+**Prueba de aceptación**
+
+* Se puede cambiar el estado de una reserva de activa a cancelada.
+* Las reservas canceladas dejan de contar como plazas ocupadas de la clase.
+* Si se cambia la clase reservada, se aplican las mismas comprobaciones que en la creación.
+* Se deben aplicar las reglas de negocio R.N.01, R.N.02 y R.N.03.
+* Un socio solo puede modificar sus propias reservas.
+
+#### R.F.28. Borrado de reservas
+
+Como administrador  
+quiero eliminar una reserva  
+para corregir registros erróneos.
+
+**Prueba de aceptación**
+
+* La reserva eliminada deja de aparecer en el listado de reservas.
+* Si la reserva tiene una asistencia registrada, el sistema impide el borrado.
+* Si la reserva no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.29. Listado de pagos
+
+Como recepcionista  
+quiero consultar los pagos realizados  
 para mantener actualizada la situación de los socios.
 
 **Prueba de aceptación**
 
-* Se muestran solo los pagos con fecha dentro del periodo indicado.
-* Si el periodo no es válido, el sistema lo rechaza.
-* Se debe aplicar la regla de negocio R.N.05.
+* Se muestran los pagos con el socio, la fecha, el importe, el método y el concepto (RI-08).
+* Se puede filtrar el listado por socio y por periodo.
+* Un socio que consulta sus pagos solo ve los suyos.
+* Si el periodo indicado no es válido (fecha de inicio posterior a la de fin), el sistema lo rechaza.
 
-#### R.F.31. Consulta de ingresos mensuales
+#### R.F.30. Creación de pagos
 
-Como administrador  
-quiero consultar los ingresos mensuales  
-para analizar la evolución del gimnasio.
-
-**Prueba de aceptación**
-
-* Se muestra, para cada mes, la suma de los importes de los pagos realizados.
-* Los meses sin pagos muestran un total de cero.
-
-#### R.F.32. Consulta de ingresos por método de pago
-
-Como administrador  
-quiero consultar los ingresos según el método de pago  
-para conocer cómo pagan los socios.
+Como recepcionista  
+quiero registrar un pago de un socio  
+para mantener actualizada su situación económica.
 
 **Prueba de aceptación**
 
-* Se muestra el total de ingresos para efectivo, tarjeta y transferencia.
-* La suma de los tres totales coincide con los ingresos totales.
-* Se debe aplicar la regla de negocio R.N.05.
+* Se almacenan el socio, la membresía relacionada, la fecha, el importe, el método de pago, el concepto y el estado (RI-08).
+* El importe debe ser mayor que cero.
+* El método de pago debe ser efectivo, tarjeta o transferencia.
+* Si el socio no existe, el sistema rechaza el registro.
+
+#### R.F.31. Edición de pagos
+
+Como recepcionista  
+quiero modificar los datos de un pago  
+para corregir errores en el registro.
+
+**Prueba de aceptación**
+
+* Se actualizan los datos modificados del pago (RI-08) y se conservan los demás.
+* El importe modificado debe seguir siendo mayor que cero.
+* Se puede cambiar el estado del pago.
+* Si el pago no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.32. Borrado de pagos
+
+Como administrador  
+quiero eliminar un pago  
+para depurar registros duplicados o erróneos.
+
+**Prueba de aceptación**
+
+* El pago eliminado deja de aparecer en el listado de pagos.
+* Los ingresos mensuales se recalculan sin tener en cuenta el pago eliminado.
+* Si el pago no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.33. Listado de asistencias
+
+Como entrenador  
+quiero consultar las asistencias de los socios a mis clases  
+para conocer quiénes han acudido.
+
+**Prueba de aceptación**
+
+* Se muestran las asistencias de la clase indicada con el socio y la fecha y hora de registro.
+* Solo se muestran asistencias de clases asignadas al entrenador.
+* Si la clase no tiene asistencias registradas, se muestra un listado vacío.
+
+#### R.F.34. Creación de asistencias
+
+Como recepcionista  
+quiero registrar la asistencia de un socio a una clase  
+para controlar quién acude a las actividades.
+
+**Prueba de aceptación**
+
+* Solo se puede registrar la asistencia de un socio que tenga una reserva activa en la clase.
+* No se puede registrar dos veces la asistencia del mismo socio a la misma clase.
+* Si el socio no tiene reserva activa en la clase, el sistema rechaza el registro.
+* Se debe aplicar la regla de negocio R.N.01.
+
+#### R.F.35. Edición de asistencias
+
+Como recepcionista  
+quiero modificar el registro de una asistencia  
+para corregir errores en el control de asistencia.
+
+**Prueba de aceptación**
+
+* Se actualizan los datos modificados de la asistencia y se conservan los demás.
+* La asistencia debe seguir asociada a una reserva activa del socio en esa clase.
+* Si la asistencia no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.36. Borrado de asistencias
+
+Como administrador  
+quiero eliminar un registro de asistencia  
+para corregir registros erróneos.
+
+**Prueba de aceptación**
+
+* La asistencia eliminada deja de aparecer en el listado de asistencias.
+* La reserva asociada a la asistencia no se elimina.
+* Si la asistencia no existe, el sistema informa de que no se ha encontrado.
 
 #### 3.1.1. Requisitos de información
 

@@ -656,56 +656,55 @@ Un entrenador no podrá impartir dos clases simultáneamente. Una sala tampoco p
 
 ### 3.3. Requisitos no funcionales (opcional)
 
-**R.N.F. 01. Rendimiento**  
-Como recepcionista  
-quiero que las consultas habituales muestren sus resultados en menos de tres segundos  
-para atender a los socios sin esperas.
+**R.N.F. 01. Rendimiento**
+Como recepcionista
+quiero que las consultas habituales muestren sus resultados en menos de tres segundos, incluso con varios usuarios conectados simultáneamente
+para atender a los socios sin esperas y garantizar una experiencia fluida.
 
-**R.N.F. 02. Seguridad**  
-Como administrador  
-quiero que el acceso a la información esté limitado según el tipo de usuario  
+**R.N.F. 02. Seguridad**
+Como administrador
+quiero que el acceso a la información esté limitado según el tipo de usuario y protegido mediante mecanismos de autenticación segura
 para que cada usuario solo consulte y modifique lo que le corresponde.
 
-**R.N.F. 03. Privacidad**  
-Como socio  
-quiero que mis datos personales estén protegidos frente a accesos no autorizados  
-para garantizar mi privacidad.
+**R.N.F. 03. Privacidad**
+Como socio
+quiero que mis datos personales estén protegidos frente a accesos no autorizados mediante medidas de seguridad adecuadas
+para garantizar la confidencialidad de mi información.
 
-**R.N.F. 04. Usabilidad**  
-Como recepcionista  
-quiero una interfaz clara, sencilla e intuitiva  
+**R.N.F. 04. Usabilidad**
+Como recepcionista
+quiero una interfaz clara, sencilla e intuitiva, con menús y opciones comprensibles
 para realizar mis tareas sin necesidad de una formación extensa.
 
-**R.N.F. 05. Integridad**  
-Como administrador  
-quiero que el sistema impida la introducción de información duplicada, incompleta o contradictoria  
-para disponer de datos fiables.
+**R.N.F. 05. Integridad**
+Como administrador
+quiero que el sistema impida la introducción de información duplicada, incompleta o contradictoria
+para disponer de datos fiables y coherentes.
 
-**R.N.F. 06. Escalabilidad**  
-Como administrador  
-quiero que el sistema pueda gestionar el crecimiento desde los 100 socios iniciales hasta aproximadamente 2.000  
+**R.N.F. 06. Escalabilidad**
+Como administrador
+quiero que el sistema pueda gestionar el crecimiento desde los 100 socios iniciales hasta aproximadamente 2.000
 para poder expandir el gimnasio sin rediseñar la base de datos.
 
-**R.N.F. 07. Compatibilidad**  
-Como administrador  
-quiero que la base de datos funcione correctamente en un servidor MariaDB  
+**R.N.F. 07. Compatibilidad**
+Como administrador
+quiero que la base de datos funcione correctamente en un servidor MariaDB
 para poder desplegarla en la infraestructura prevista.
 
 **R.N.F. 08. Mantenibilidad**
-Como administrador  
-quiero poder añadir nuevas salas, clases, membresías y servicios  
-para ampliar la oferta del gimnasio sin modificar la estructura del sistema.
+Como administrador
+quiero poder añadir nuevas salas, clases, membresías y servicios sin realizar grandes modificaciones en la estructura del sistema
+para ampliar la oferta del gimnasio de forma sencilla.
 
-**R.N.F. 09. Copias de seguridad**  
-Como administrador  
-quiero que se realicen copias de seguridad periódicas de la base de datos  
-para poder recuperar la información ante un fallo.
+**R.N.F. 09. Copias de seguridad**
+Como administrador
+quiero que se realicen copias de seguridad periódicas de la base de datos y que sea posible restaurarlas
+para recuperar la información ante un fallo o una incidencia.
 
-**R.N.F. 10. Disponibilidad**  
-Como socio  
-quiero que el sistema esté disponible durante el horario de apertura del gimnasio  
+**R.N.F. 10. Disponibilidad**
+Como socio
+quiero que el sistema esté disponible al menos el 99 % del tiempo durante el horario de apertura del gimnasio y permita el acceso desde distintos dispositivos
 para consultar mis datos y reservar clases cuando lo necesite.
-
 
 -- fin entregable 1 --
 

@@ -33,7 +33,7 @@ Con esta base de datos se busca reducir errores. Se busca hacer más rápido el 
 
 ## 2. Visión general del sistema
 
-### 3.1. Requisitos generales
+### 2.1. Requisitos generales
 
 - **RG-01:** El sistema deberá gestionar la información de los socios.
 - **RG-02:** El sistema deberá gestionar las fichas físicas de los socios.
@@ -654,7 +654,7 @@ Un entrenador no podrá impartir dos clases simultáneamente. Una sala tampoco p
 - Como socio, quiero consultar mis pagos para comprobar los importes abonados.
 - Como administrador, quiero consultar los ingresos mensuales para analizar la evolución del gimnasio.
 
-### 4.3. Requisitos no funcionales (opcional)
+### 3.3. Requisitos no funcionales (opcional)
 
 **R.N.F. 01. Rendimiento**  
 Como recepcionista  

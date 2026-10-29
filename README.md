@@ -53,6 +53,7 @@ Con esta base de datos se busca reducir errores. Se busca hacer más rápido el 
 Es el usuario con mayor nivel de acceso. Sus funciones principales serán:
 
 - Consultar la información de socios y entrenadores.
+- Gestionar la información de los administradores.
 - Gestionar las membresías ofrecidas.
 - Supervisar las clases y salas.
 - Consultar reservas y pagos.
@@ -74,7 +75,6 @@ Es el profesional encargado de impartir las clases. Sus funciones principales se
 Es el cliente registrado en el gimnasio. Sus funciones principales serán:
 
 - Consultar sus datos personales.
-- Consultar su ficha física.
 - Consultar su membresía.
 - Consultar las clases disponibles.
 - Consultar sus reservas.
@@ -135,55 +135,54 @@ para depurar registros que ya no son necesarios.
 * Si el socio tiene reservas o pagos asociados, el sistema impide el borrado.
 * Si el socio no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.05. Listado de fichas físicas
-
-Como recepcionista  
-quiero consultar el listado de fichas físicas  
-para conocer la información física registrada de los socios.
-
-**Prueba de aceptación**
-
-* Se muestran todas las fichas físicas registradas, cada una junto al socio al que pertenece.
-* Para cada ficha se muestran el peso, la altura, el objetivo deportivo y la fecha de última actualización (RI-02).
-* Si no hay fichas registradas, se muestra un listado vacío.
-
-#### R.F.06. Creación de fichas físicas
-
-Como recepcionista  
-quiero crear la ficha física de un socio  
-para registrar su situación física y su objetivo deportivo.
-
-**Prueba de aceptación**
-
-* Se almacenan el peso, la altura, el objetivo deportivo y las observaciones del socio (RI-02).
-* Las fechas de creación y de última actualización se establecen con la fecha del día.
-* Un socio no puede tener más de una ficha física.
-* Si el socio no existe, el sistema rechaza la creación.
-
-#### R.F.07. Edición de fichas físicas
-
-Como recepcionista  
-quiero modificar la ficha física de un socio  
-para mantener actualizados sus datos físicos.
-
-**Prueba de aceptación**
-
-* Se actualizan los datos modificados de la ficha (RI-02) y se conservan los demás.
-* La fecha de última actualización se establece con la fecha del día.
-* La fecha de creación no se modifica.
-* Si el socio no tiene ficha física, el sistema lo indica.
-
-#### R.F.08. Borrado de fichas físicas
+#### R.F.05. Listado de administradores
 
 Como administrador  
-quiero eliminar la ficha física de un socio  
-para eliminar información que ya no es necesaria.
+quiero consultar el listado completo de administradores  
+para conocer quién gestiona el sistema.
 
 **Prueba de aceptación**
 
-* La ficha eliminada deja de mostrarse en el listado de fichas físicas.
-* El socio al que pertenecía la ficha no se elimina.
-* Si la ficha no existe, el sistema informa de que no se ha encontrado.
+* Se muestran todos los administradores registrados.
+* Para cada uno se muestran su identificador, nombre y apellidos (RI-02).
+* Solo un administrador puede consultar este listado.
+
+#### R.F.06. Creación de administradores
+
+Como administrador  
+quiero registrar un nuevo administrador  
+para que pueda gestionar el sistema.
+
+**Prueba de aceptación**
+
+* Se almacenan todos los datos del administrador indicados en RI-02.
+* El administrador queda registrado con la fecha de alta del día.
+* Si ya existe un administrador con el mismo DNI, el sistema rechaza el registro.
+* Si falta algún dato obligatorio, el sistema rechaza el registro.
+
+#### R.F.07. Edición de administradores
+
+Como administrador  
+quiero modificar los datos de un administrador  
+para mantener su información correcta y actualizada.
+
+**Prueba de aceptación**
+
+* Se actualizan los datos modificados del administrador (RI-02) y se conservan los demás.
+* No se puede asignar un DNI que ya pertenezca a otro administrador.
+* Si el administrador no existe, el sistema informa de que no se ha encontrado.
+
+#### R.F.08. Borrado de administradores
+
+Como administrador  
+quiero eliminar un administrador del sistema  
+para retirar el acceso a quien ya no gestiona el gimnasio.
+
+**Prueba de aceptación**
+
+* El administrador eliminado deja de aparecer en el listado de administradores.
+* No se puede eliminar al único administrador del sistema.
+* Si el administrador no existe, el sistema informa de que no se ha encontrado.
 
 #### R.F.09. Listado de membresías
 
@@ -536,6 +535,35 @@ para corregir registros erróneos.
 * La reserva asociada a la asistencia no se elimina.
 * Si la asistencia no existe, el sistema informa de que no se ha encontrado.
 
+#### R.F.37. Asignación o renovación de la membresía de un socio
+
+Como recepcionista  
+quiero asignar o renovar la membresía de un socio  
+para que pueda reservar clases mientras su membresía esté vigente.
+
+**Prueba de aceptación**
+
+* Se asocia al socio la membresía indicada (RI-01) con la fecha de contratación o renovación del día.
+* Solo se pueden asignar membresías cuyo estado es disponible (RI-03).
+* Al renovar, la vigencia se calcula a partir de la duración de la membresía (RI-03).
+* Cuando termina la vigencia, la membresía deja de estar vigente y el socio no puede reservar clases.
+* Si el socio o la membresía no existen, el sistema informa de que no se han encontrado.
+* Se debe aplicar la regla de negocio R.N.01.
+
+#### R.F.38. Consulta de plazas disponibles de una clase
+
+Como socio  
+quiero consultar las plazas disponibles de cada clase  
+para decidir cuál reservar antes de que se complete.
+
+**Prueba de aceptación**
+
+* Para cada clase se muestra el número de plazas libres, calculado como el máximo de participantes menos las reservas activas.
+* Una clase completa muestra cero plazas disponibles.
+* Las reservas canceladas no cuentan como plazas ocupadas.
+* No se muestran las clases canceladas.
+* Se debe aplicar la regla de negocio R.N.02.
+
 #### 3.1.1. Requisitos de información
 
 ##### RI-01. Información de los socios
@@ -553,19 +581,19 @@ De cada socio se almacenará: en linea,,,,
 - Fecha de alta.
 - Estado, que podrá ser activo o inactivo.
 - Membresía contratada.
+- Fecha de inicio de la membresía contratada.
 
-##### RI-02. Información de las fichas físicas
+##### RI-02. Información de los administradores
 
-De cada ficha física se almacenará:
+De cada administrador se almacenará:
 
 - Identificador único.
-- Socio al que pertenece.
-- Peso.
-- Altura.
-- Objetivo deportivo.
-- Observaciones.
-- Fecha de creación.
-- Fecha de la última actualización.
+- DNI.
+- Nombre.
+- Apellidos.
+- Teléfono.
+- Correo electrónico.
+- Fecha de alta.
 
 ##### RI-03. Información de las membresías
 
@@ -687,55 +715,21 @@ Un entrenador no podrá impartir dos clases simultáneamente. Una sala tampoco p
 - Clase.
 
 
-### 3.2. Mapa de historias de usuario (opcional) de forma grafica******
+### 3.2. Mapa de historias de usuario (opcional) de forma grafica
 
-#### Gestión de socios
+Cada fila es un requisito general (RG) y cada columna una operación. En cada celda se indica el requisito funcional, el rol que realiza la historia y la acción.
 
-- Como recepcionista, quiero gestionar los datos de los socios para mantener la información actualizada.
-- Como administrador, quiero consultar los socios activos e inactivos para conocer la situación del gimnasio.
-- Como socio, quiero consultar mis datos para comprobar que son correctos.
-
-#### Gestión de fichas físicas
-
-- Como recepcionista, quiero consultar la ficha física de un socio para conocer su información registrada.
-- Como socio, quiero consultar mi ficha física para comprobar mis datos y mi objetivo deportivo.
-- Como administrador, quiero consultar las fichas actualizadas en un periodo para controlar su mantenimiento.
-
-#### Gestión de membresías
-
-- Como recepcionista, quiero consultar las membresías para informar a los clientes.
-- Como socio, quiero consultar mi membresía para conocer sus condiciones.
-- Como administrador, quiero consultar el número de socios de cada membresía para conocer su popularidad.
-
-#### Gestión de entrenadores
-
-- Como administrador, quiero gestionar los datos de los entrenadores para mantener actualizada la plantilla.
-- Como recepcionista, quiero consultar las especialidades de los entrenadores para informar a los socios.
-- Como entrenador, quiero consultar mis clases asignadas para organizar mi horario.
-
-#### Gestión de salas
-
-- Como administrador, quiero gestionar las salas para organizar las instalaciones.
-- Como recepcionista, quiero consultar las salas disponibles para conocer su ocupación.
-- Como entrenador, quiero consultar la sala asignada a cada clase.
-
-#### Gestión de clases
-
-- Como administrador, quiero gestionar las clases para organizar la programación.
-- Como socio, quiero consultar las clases disponibles para decidir cuáles reservar.
-- Como entrenador, quiero consultar las clases que tengo asignadas.
-
-#### Gestión de reservas
-
-- Como socio, quiero gestionar mis reservas para organizar mis actividades.
-- Como recepcionista, quiero consultar las reservas de un socio para ayudarle.
-- Como entrenador, quiero consultar los socios inscritos en sus clases.
-
-#### Gestión de pagos
-
-- Como recepcionista, quiero registrar los pagos para mantener actualizada la situación de los socios.
-- Como socio, quiero consultar mis pagos para comprobar los importes abonados.
-- Como administrador, quiero consultar los ingresos mensuales para analizar la evolución del gimnasio.
+| Requisito general | Listado | Creación | Edición | Borrado | Otras historias |
+|:------------------|:--------|:---------|:--------|:--------|:----------------|
+| **RG-01. Socios** | **R.F.01** · Recepcionista<br>Consultar socios | **R.F.02** · Recepcionista<br>Registrar socio | **R.F.03** · Recepcionista<br>Modificar socio | **R.F.04** · Administrador<br>Eliminar socio | |
+| **RG-02. Administradores** | **R.F.05** · Administrador<br>Consultar administradores | **R.F.06** · Administrador<br>Registrar administrador | **R.F.07** · Administrador<br>Modificar administrador | **R.F.08** · Administrador<br>Eliminar administrador | |
+| **RG-03. Membresías** | **R.F.09** · Recepcionista<br>Consultar membresías | **R.F.10** · Administrador<br>Crear membresía | **R.F.11** · Administrador<br>Modificar membresía | **R.F.12** · Administrador<br>Eliminar membresía | **R.F.37** · Recepcionista<br>Asignar o renovar la membresía de un socio |
+| **RG-04. Entrenadores** | **R.F.13** · Administrador<br>Consultar entrenadores | **R.F.14** · Administrador<br>Registrar entrenador | **R.F.15** · Administrador<br>Modificar entrenador | **R.F.16** · Administrador<br>Eliminar entrenador | |
+| **RG-05. Salas** | **R.F.17** · Administrador<br>Consultar salas | **R.F.18** · Administrador<br>Crear sala | **R.F.19** · Administrador<br>Modificar sala | **R.F.20** · Administrador<br>Eliminar sala | |
+| **RG-06. Clases** | **R.F.21** · Socio<br>Consultar clases | **R.F.22** · Administrador<br>Programar clase | **R.F.23** · Administrador<br>Modificar clase | **R.F.24** · Administrador<br>Eliminar clase | **R.F.38** · Socio<br>Consultar plazas disponibles de una clase |
+| **RG-07. Reservas** | **R.F.25** · Recepcionista<br>Consultar reservas | **R.F.26** · Socio<br>Reservar clase | **R.F.27** · Socio<br>Cancelar o cambiar reserva | **R.F.28** · Administrador<br>Eliminar reserva | |
+| **RG-08. Pagos** | **R.F.29** · Recepcionista<br>Consultar pagos | **R.F.30** · Recepcionista<br>Registrar pago | **R.F.31** · Recepcionista<br>Corregir pago | **R.F.32** · Administrador<br>Eliminar pago | |
+| **RG-09. Asistencias** | **R.F.33** · Entrenador<br>Consultar asistencias | **R.F.34** · Recepcionista<br>Registrar asistencia | **R.F.35** · Recepcionista<br>Corregir asistencia | **R.F.36** · Administrador<br>Eliminar asistencia | |
 
 ### 3.3. Requisitos no funcionales (opcional)
 

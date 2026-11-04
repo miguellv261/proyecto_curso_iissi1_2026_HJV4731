@@ -787,27 +787,95 @@ para consultar mis datos y reservar clases cuando lo necesite.
 
 ## 5. Modelo conceptual
 
+## 5. Modelo conceptual de datos
+
 ### 5.1. Diagramas de clases UML
 
-- con restricciones.
+* con restricciones.
+
+![Diagrama de Clases UML](./imagenes/diagrama_clases.png)
+
+#### Restricciones asociadas al modelo conceptual:
+- **RN-01 (Validez de reserva):** Un socio solo podrá reservar una clase si se encuentra activo, tiene una membresía vigente y quedan plazas disponibles.
+- **RN-02 (Control de aforo):** El número máximo de participantes de una clase no podrá superar el aforo de la sala asignada. El número de reservas activas tampoco superará el máximo de la clase.
+- **RN-03 (Coincidencia de clases reservadas):** Un socio no podrá reservar dos clases cuyos horarios coincidan total o parcialmente.
+- **RN-04 (Disponibilidad de entrenadores y salas):** Un entrenador no podrá impartir dos clases simultáneamente, ni una sala alojar dos clases concurrentes.
+- **RN-05 (Pago de membresía):** Los pagos deben estar asociados a un importe mayor a cero, con método válido (efectivo, tarjeta, transferencia) y vinculados a una membresía del socio.
+
+---
 
 ### 5.2. Escenarios de prueba
 
-- con descripción textual y diagrama de objetos UML.
+* con descripción textual y diagrama de objetos UML.
+
+#### Escenario 1: Reserva con éxito y control de aforo (RN-01, RN-02)
+**Descripción textual:** El socio activo Juan Pérez cuenta con una membresía vigente de tipo Mensual y realiza una reserva para la clase de Spinning en la Sala 1. La sala dispone de un aforo de 20 personas y la clase limita la participación a 15 personas máximo. Se verifica que el socio esté activo y con cupo libre.
+
+![Escenario de Prueba 1](./imagenes/escenario_prueba_1.png)
+
+#### Escenario 2: Registro y pago de membresía (RN-05)
+**Descripción textual:** La socia María Gómez realiza el pago de 300,00 € correspondientes a su membresía anual mediante pago con tarjeta. Se valida la relación entre el registro del pago, la membresía del socio y su estado activo.
+
+![Escenario de Prueba 2](./imagenes/escenario_prueba_2.png)
+
+---
 
 ## 6. Matrices de trazabilidad
 
-- Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
+* Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
-|       | EntidadX   | AsociaciónX  | RestricciónX  | Entidad2 ...   | 
-|:------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  | X          | X          | X          | X          |
-| RI-2  |            | X          |            | X          |
-| RF-1  |            | X          |            | X          |
-| RF-2  | X          |            | X          | X          |
-| RN-1  |            | X          |            |            |
-| RN-2  | X          | X          | X          |            |
-| ...   |            |            |            |            |
+| Requisito / Regla | Entidad: Usuario | Entidad: Socio | Entidad: Entrenador | Entidad: Sala | Entidad: Clase | Entidad: Reserva | Entidad: Membresía | Entidad: Pago | Entidad: Entrada | Asoc: Usuario-Socio/Entrenador | Asoc: Socio-Membresía (compra) | Asoc: Membresía-Pago (se paga con) | Asoc: Socio-Reserva (realiza) | Asoc: Reserva-Clase | Asoc: Clase-Sala (desarrolla en) | Asoc: Clase-Entrenador | Restricción: RN-01 | Restricción: RN-02 | Restricción: RN-03 | Restricción: RN-05 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **RI-01** | X | X | | | | | X | | | X | X | | | | | | | | | |
+| **RI-02** | X | | | | | | | | | X | | | | | | | | | | |
+| **RI-03** | | | | | | | X | | | | | | | | | | | | | |
+| **RI-04** | X | | X | | | | | | | X | | | | | | | | | | |
+| **RI-05** | | | | X | | | | | | | | | | | | | | | | |
+| **RI-06** | | | X | X | X | | | | | | | | | | X | X | | | | |
+| **RI-07** | | X | | | X | X | | | | | | | X | X | | | | | | |
+| **RI-08** | | X | | | | | X | X | | | | X | | | | | | | | |
+| **R.F.01** | | X | | | | | | | | | | | | | | | | | | |
+| **R.F.02** | X | X | | | | | X | | | X | X | | | | | | | | | |
+| **R.F.03** | X | X | | | | | | | | X | | | | | | | | | | |
+| **R.F.04** | | X | | | | X | | X | | | | | X | | | | | | | |
+| **R.F.05** | X | | | | | | | | | X | | | | | | | | | | |
+| **R.F.06** | X | | | | | | | | | X | | | | | | | | | | |
+| **R.F.07** | X | | | | | | | | | X | | | | | | | | | | |
+| **R.F.08** | X | | | | | | | | | X | | | | | | | | | | |
+| **R.F.09** | | | | | | | X | | | | | | | | | | | | | |
+| **R.F.10** | | | | | | | X | | | | | | | | | | | | | |
+| **R.F.11** | | | | | | | X | | | | | | | | | | | | | |
+| **R.F.12** | | X | | | | | X | | | | X | | | | | | | | | |
+| **R.F.13** | X | | X | | | | | | | X | | | | | | | | | | |
+| **R.F.14** | X | | X | | | | | | | X | | | | | | | | | | |
+| **R.F.15** | X | | X | | | | | | | X | | | | | | | | | | |
+| **R.F.16** | | | X | | X | | | | | | | | | | | X | | | | |
+| **R.F.17** | | | | X | | | | | | | | | | | | | | | | |
+| **R.F.18** | | | | X | | | | | | | | | | | | | | | | |
+| **R.F.19** | | | | X | X | | | | | | | | | | X | | | X | | |
+| **R.F.20** | | | | X | X | | | | | | | | | | X | | | | | |
+| **R.F.21** | | | X | X | X | | | | | | | | | | X | X | | | | |
+| **R.F.22** | | | X | X | X | | | | | | | | | | X | X | | X | | |
+| **R.F.23** | | | X | X | X | X | | | | | | | | X | X | X | | X | | |
+| **R.F.24** | | | | | X | X | | | | | | | | X | | | | | | |
+| **R.F.25** | | X | | | X | X | | | | | | | X | X | | | | | | |
+| **R.F.26** | | X | | | X | X | X | | | | X | | X | X | | | X | X | X | |
+| **R.F.27** | | X | | | X | X | X | | | | X | X | | | X | X | X | |
+| **R.F.28** | | | | | | X | | | X | | | | | | | | | | | |
+| **R.F.29** | | X | | | | | X | X | | | | X | | | | | | | | |
+| **R.F.30** | | X | | | | | X | X | | | | X | | | | | | | | |
+| **R.F.31** | | X | | | | | X | X | | | | X | | | | | | | | |
+| **R.F.32** | | | | | | | | X | | | | | | | | | | | | |
+| **R.F.33** | | X | X | | X | | | | X | | | | | | | X | | | | |
+| **R.F.34** | | X | | | X | X | | | X | | | | X | X | | | X | | | |
+| **R.F.35** | | X | | | X | X | | | X | | | | X | X | | | | | | |
+| **R.F.36** | | | | | | X | | | X | | | | | | | | | | | |
+| **R.F.37** | | X | | | | | X | | | | X | | | | | | X | | | |
+| **R.F.38** | | | | X | X | X | | | | | | | | X | X | | | X | | |
+| **RN-01** | | X | | | X | X | X | | | | X | | X | X | | | X | | | |
+| **RN-02** | | | | X | X | X | | | | | | | | X | X | | | X | | |
+| **RN-03** | | X | | | X | X | | | | | | | X | X | | | | | X | |
+| **RN-05** | | | | | | | X | X | | | | X | | | | | | | | X |
 
 -- fin entregable 2 --
 

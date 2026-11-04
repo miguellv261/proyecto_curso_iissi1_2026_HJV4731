@@ -787,7 +787,6 @@ para consultar mis datos y reservar clases cuando lo necesite.
 
 ## 5. Modelo conceptual
 
-## 5. Modelo conceptual de datos
 
 ### 5.1. Diagramas de clases UML
 

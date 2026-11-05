@@ -790,7 +790,6 @@ para consultar mis datos y reservar clases cuando lo necesite.
 
 ### 5.1. Diagramas de clases UML
 
-* con restricciones.
 
 ![Diagrama de Clases UML](./imagenes/diagrama_clases.png)
 
@@ -810,12 +809,12 @@ para consultar mis datos y reservar clases cuando lo necesite.
 #### Escenario 1: Reserva con éxito y control de aforo (RN-01, RN-02)
 **Descripción textual:** El socio activo Juan Pérez cuenta con una membresía vigente de tipo Mensual y realiza una reserva para la clase de Spinning en la Sala 1. La sala dispone de un aforo de 20 personas y la clase limita la participación a 15 personas máximo. Se verifica que el socio esté activo y con cupo libre.
 
-![Escenario de Prueba 1](./imagenes/escenario_prueba_1.png)
+![Escenario de Prueba 1](.imagenes/escenario_prueba_1.png)
 
 #### Escenario 2: Registro y pago de membresía (RN-05)
 **Descripción textual:** La socia María Gómez realiza el pago de 300,00 € correspondientes a su membresía anual mediante pago con tarjeta. Se valida la relación entre el registro del pago, la membresía del socio y su estado activo.
 
-![Escenario de Prueba 2](./imagenes/escenario_prueba_2.png)
+![Escenario de Prueba 2](.imagenes/escenario_prueba_2.png)
 
 ---
 

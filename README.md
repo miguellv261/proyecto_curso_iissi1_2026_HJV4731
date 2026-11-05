@@ -791,7 +791,7 @@ para consultar mis datos y reservar clases cuando lo necesite.
 ### 5.1. Diagramas de clases UML
 
 
-![Diagrama de Clases UML](./imagenes/diagrama_clases.png)
+![Diagrama de Clases UML](./imagenes/WhatsAppImage2026-11-05at18.31.15.jpeg)
 
 #### Restricciones asociadas al modelo conceptual:
 - **RN-01 (Validez de reserva):** Un socio solo podrá reservar una clase si se encuentra activo, tiene una membresía vigente y quedan plazas disponibles.

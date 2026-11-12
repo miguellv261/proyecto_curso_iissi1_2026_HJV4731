@@ -748,7 +748,7 @@ para consultar mis datos y reservar clases cuando lo necesite.
 - **RN-02 (Control de aforo):** El número máximo de participantes de una clase no podrá superar el aforo de la sala asignada. El número de reservas activas tampoco superará el máximo de la clase.
 - **RN-03 (Coincidencia de clases reservadas):** Un socio no podrá reservar dos clases cuyos horarios coincidan total o parcialmente.
 - **RN-04 (Disponibilidad de entrenadores y salas):** Un entrenador no podrá impartir dos clases simultáneamente, ni una sala alojar dos clases concurrentes.
-- **RN-05 (trigger entrenador
+- **RN-05 (trigger entrenador):** 
 
 
 ---

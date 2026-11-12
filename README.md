@@ -43,7 +43,6 @@ Con esta base de datos se busca reducir errores. Se busca hacer más rápido el 
 - **RG-06:** El sistema deberá gestionar las clases.
 - **RG-07:** El sistema deberá gestionar las reservas de los socios.
 - **RG-08:** El sistema deberá gestionar los pagos.
-- **RG-09:** El sistema deberá controlar la asistencia de los socios.
 
 
 ### 2.2. Usuarios del sistema
@@ -486,55 +485,6 @@ para depurar registros duplicados o erróneos.
 * Los ingresos mensuales se recalculan sin tener en cuenta el pago eliminado.
 * Si el pago no existe, el sistema informa de que no se ha encontrado.
 
-#### R.F.33. Listado de asistencias
-
-Como entrenador  
-quiero consultar las asistencias de los socios a mis clases  
-para conocer quiénes han acudido.
-
-**Prueba de aceptación**
-
-* Se muestran las asistencias de la clase indicada con el socio y la fecha y hora de registro.
-* Solo se muestran asistencias de clases asignadas al entrenador.
-* Si la clase no tiene asistencias registradas, se muestra un listado vacío.
-
-#### R.F.34. Creación de asistencias
-
-Como recepcionista  
-quiero registrar la asistencia de un socio a una clase  
-para controlar quién acude a las actividades.
-
-**Prueba de aceptación**
-
-* Solo se puede registrar la asistencia de un socio que tenga una reserva activa en la clase.
-* No se puede registrar dos veces la asistencia del mismo socio a la misma clase.
-* Si el socio no tiene reserva activa en la clase, el sistema rechaza el registro.
-* Se debe aplicar la regla de negocio R.N.01.
-
-#### R.F.35. Edición de asistencias
-
-Como recepcionista  
-quiero modificar el registro de una asistencia  
-para corregir errores en el control de asistencia.
-
-**Prueba de aceptación**
-
-* Se actualizan los datos modificados de la asistencia y se conservan los demás.
-* La asistencia debe seguir asociada a una reserva activa del socio en esa clase.
-* Si la asistencia no existe, el sistema informa de que no se ha encontrado.
-
-#### R.F.36. Borrado de asistencias
-
-Como administrador  
-quiero eliminar un registro de asistencia  
-para corregir registros erróneos.
-
-**Prueba de aceptación**
-
-* La asistencia eliminada deja de aparecer en el listado de asistencias.
-* La reserva asociada a la asistencia no se elimina.
-* Si la asistencia no existe, el sistema informa de que no se ha encontrado.
-
 #### R.F.37. Asignación o renovación de la membresía de un socio
 
 Como recepcionista  
@@ -798,7 +748,8 @@ para consultar mis datos y reservar clases cuando lo necesite.
 - **RN-02 (Control de aforo):** El número máximo de participantes de una clase no podrá superar el aforo de la sala asignada. El número de reservas activas tampoco superará el máximo de la clase.
 - **RN-03 (Coincidencia de clases reservadas):** Un socio no podrá reservar dos clases cuyos horarios coincidan total o parcialmente.
 - **RN-04 (Disponibilidad de entrenadores y salas):** Un entrenador no podrá impartir dos clases simultáneamente, ni una sala alojar dos clases concurrentes.
-- **RN-05 (Pago de membresía):** Los pagos deben estar asociados a un importe mayor a cero, con método válido (efectivo, tarjeta, transferencia) y vinculados a una membresía del socio.
+- **RN-05 (trigger entrenador
+
 
 ---
 

@@ -869,7 +869,22 @@ En total, hay **10 conexiones entre clases**, contando las tres ramas de herenci
 
 ### 7.1.  Justificación de la estrategia de transformación de jerarquías
 
-- si se identificaron jerarquías en el MC.
+En el modelo conceptual (MC) se ha identificado una jerarquía de generalización/especialización en la entidad **Usuario**, que se divide en tres subtipos:
+
+- **Socio**
+- **Entrenador**
+- **Administrador**
+
+Se ha optado por mantener una estructura de herencia, conservando la clase padre `Usuario` y sus tres clases hijas.
+
+Esta jerarquía presenta las siguientes restricciones:
+
+- **Completa:** todos los usuarios deben pertenecer obligatoriamente a uno de los tres subtipos.
+- **Disjunta:** un usuario solamente puede pertenecer a uno de los tres subtipos.
+
+Esta estrategia permite mantener los atributos comunes (`dni`, `nombre`, `apellidos`, `email`, `teléfono`, `contraseña` y `tipoUsuario`) en la clase padre `Usuario`, mientras que cada subtipo conserva sus propios atributos específicos.
+
+De esta manera, se evita duplicar información común y se consigue una estructura organizada, clara y fácil de mantener.
 
 
 ### 8. Matriz de trazabilidad MC/SQL (opcional):

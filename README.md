@@ -830,7 +830,42 @@ para consultar mis datos y reservar clases cuando lo necesite.
 
 ## 7. Modelo relacional en 3FN
 
-- Relaciones obtenidas al aplicar la transformación del modelo conceptual.
+## Relaciones de herencia (generalización)
+
+- **Usuario → Socio**
+- **Usuario → Entrenador**
+- **Usuario → Administrador**
+
+La herencia es:
+- **Completa:** todos los usuarios deben pertenecer a uno de los tres tipos.
+- **Disjunta:** un usuario solo puede pertenecer a uno de los tres tipos.
+
+## Relaciones de asociación
+
+| Relación | Clases relacionadas | Cardinalidad |
+|---|---|---|
+| contrata | Socio – Inscripción | 1 : 0..* |
+| realiza | Socio – Reserva | 1 : 0..* |
+| tiene | Socio – Membresía | 0..* : 1 |
+| pertenece a | Reserva – Clase | 0..* : 1 |
+| imparte | Entrenador – Clase | 1 : 0..* |
+| se desarrolla en | Clase – Sala | 0..* : 1 |
+
+## Relaciones de composición
+
+- **Inscripción – Pago:** una inscripción puede tener cero o varios pagos (0..*), mientras que cada pago pertenece a una única inscripción (1).
+
+Esta relación se representa mediante un rombo negro.
+
+## Resumen
+
+El diagrama contiene:
+
+- **3 relaciones de herencia.**
+- **6 relaciones de asociación.**
+- **1 relación de composición.**
+
+En total, hay **10 conexiones entre clases**, contando las tres ramas de herencia por separado.
 
 ### 7.1.  Justificación de la estrategia de transformación de jerarquías
 
